@@ -1,0 +1,22 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+#fondoQuienesSomos {
+    background-image: url(../img/fonodoQuinesomos.jpg);
+    opacity: .9;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
+
+#quienesSomos {
+    background-color: rgb(196, 192, 186);
+    color: rgb(0, 0, 0);
+    align-content: stretch;
+    font-size: larger;
+    width: 100%;
+}
