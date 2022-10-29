@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stilos.css">
 
     <title>Document</title>
 </head>
@@ -29,19 +30,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" style="border-right: 1px solid #bbb;" href="#">Navega</a>
                             </li>
-                            <li class="nav-item dropdown" style="border-right: 1px solid #bbb;">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link disabled">Disabled</a>
                             </li>
@@ -68,7 +57,7 @@
                         </div>
 
                         <a class="btn btn-success m-2" data-bs-toggle="modal" href="#exampleModalToggle" role="button">LOGIN</a>
-                        <a href="#" class="btn btn-primary m-2">REGISTRARME</a>
+                        <a href="viewRegistrarUsuario.php" class="btn btn-primary m-2">REGISTRARME</a>
 
                     </div>
                 </div>
@@ -196,7 +185,7 @@
                 </script>
 
             </div>
-            <div class="col">
+            <div class="col ">
                 <div class="card mb-3" style="width: 100%; height: 100%;">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -215,7 +204,7 @@
         </div>
         <hr>
         <footer>
-            <div class="row bg-black" id="footerr">
+            <div class="row text-center bg-black" id="footerr">
 
                 <div class="col"><img src="../img/LOGOBLACK.jpg" width="400px" height="200px" class="rounded float-end" alt=""></div>
             </div>

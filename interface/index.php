@@ -30,19 +30,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" style="border-right: 1px solid #bbb;" href="Navega.php">Navega</a>
                             </li>
-                            <li class="nav-item dropdown" style="border-right: 1px solid #bbb;">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled">Disabled</a>
                             </li>
@@ -69,7 +56,7 @@
                             </div>
 
                             <a class="btn btn-success m-2" data-bs-toggle="modal" href="#exampleModalToggle" role="button">LOGIN</a>
-                            <a href="#" class="btn btn-primary m-2">REGISTRARME</a>
+                            <a href="viewRegistrarUsuario.php" class="btn btn-primary m-2">REGISTRARME</a>
                     
                     </div>
                 </div>
