@@ -25,5 +25,20 @@ switch ($_GET['a']) {
             header('Location: ../interface/viewPerfilUsuario.php');
         }
         break;
+        case 'editar':
+            $user = new modeloRegistroUsuario();
+            $user->setCedula($_POST['idCliente']);
+            $user->setNombre($_POST['nombreCliente']);
+            $user->setApellido($_POST['apellidoCliente']);
+            $user->setCiudad($_POST['ciudad']);
+            $user->setDireccion($_POST['direccionCliente']);
+            $user->setCorreo($_POST['correoCliente']);
+            $rs = daoRegistroUsuario::actualizarUsuario($user);
+
+            if ($rs){
+                header('Location: ../interface/viewPerfilUsuario.php');
+
+            }
+            break;
 
 }

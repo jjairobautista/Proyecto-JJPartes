@@ -27,6 +27,15 @@ class daoRegistroUsuario
         return $rs;
     }
 
+    public static function buscarCliente($id)
+    {
+        $connection = new claseConexion();
+        $query = "SELECT * FROM tbl_cliente WHERE cedula =" . $id;
+        $rs = $connection->ejecutarConsulta($query);
+        $connection->cerrarConexion();
+        return $rs[0];
+    }
+
     public static function registrarUsuario($user)
     {
         $connection = new claseConexion();
@@ -37,6 +46,16 @@ class daoRegistroUsuario
         echo $connection->ejecutarActualizacion($query);
         $connection->cerrarConexion();
 
+    }
+
+    public static function actualizarUsuario($user)
+    {
+        $connection = new claseConexion();
+        $query = "UPDATE public.tbl_cliente
+	SET  nombres ='".$user->getNombre()."', apellidos='".$user->getApellido()."', ciudad='".$user->getCiudad()."', direccion='". $user->getDireccion()."', correo='".$user->getCorreo()."'	WHERE cedula =" . $user->getCedula();
+        $rs = $connection->ejecutarActualizacion($query);
+        $connection->cerrarConexion();
+        return $rs;
     }
 
     public static function consultaLogin($user)

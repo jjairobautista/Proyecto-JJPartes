@@ -1,6 +1,7 @@
 <?php
 include "../dao/daoRegistroUsuario.php";
 
+$ref = daoRegistroUsuario::buscarCliente($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,32 +44,8 @@ include "../dao/daoRegistroUsuario.php";
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-
-
-                    <div class="modal fade bg-primary" id="exampleModalToggle" aria-hidden="true"
-                         aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Inicio De Session</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <input class="form-control" type="email" name="" id="" required>
-                                    <br>
-                                    <input class="form-control" type="password" name="" id="" required>
-                                </div>
-                                <div class="modal-footer ">
-                                    <a href=""><img src="../img/iniciarSesion.png" width="60px" height="60px"
-                                                    alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-success m-2" data-bs-toggle="modal" href="#exampleModalToggle"
-                       role="button">LOGIN</a>
+                    <a class="btn btn-success m-2" href="viewPerfilUsuario.php"
+                       role="button">Volver</a>
 
                 </div>
             </div>
@@ -76,12 +53,12 @@ include "../dao/daoRegistroUsuario.php";
     </div>
     <hr>
     <div class="container bg-dark text-light p-5" style="border-radius: 20px" id="formRegistro">
-        <form action="../control/controladorRegistroUsuario.php?a=registrar&vista=si" method="post">
+        <form action="../control/controladorRegistroUsuario.php?a=editar&vista=si" method="post">
 
             <div class="row">
                 <div class="col">
                     <label for="idCliente" class="form-label">Cedula</label>
-                    <input type="number" class="form-control" name="idCliente" id="idCliente" required>
+                    <input type="number" class="form-control" name="idCliente" id="idCliente" value="<?=$ref['cedula']?>" readonly>
                     <br>
                 </div>
             </div>
@@ -89,11 +66,11 @@ include "../dao/daoRegistroUsuario.php";
             <div class="row">
                 <div class="col">
                     <label for="nombreCliente" class="form-label">Nombres</label>
-                    <input type="text" class="form-control" name="nombreCliente" id="nombreCliente" required>
+                    <input type="text" class="form-control" name="nombreCliente" id="nombreCliente" value="<?=$ref['nombres']?>">
                 </div>
                 <div class="col">
                     <label for="apellidoCliente" class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" name="apellidoCliente" id="apellidoCliente" required>
+                    <input type="text" class="form-control" name="apellidoCliente" id="apellidoCliente" value="<?=$ref['apellidos']?>">
                     <br>
                 </div>
             </div>
@@ -101,11 +78,11 @@ include "../dao/daoRegistroUsuario.php";
             <div class="row">
                 <div class="col">
                     <label for="ciudad" class="form-label">Ciudad</label>
-                    <select class="form-select" name="ciudad" required>
-                        <option selected disabled>Seleccione la Ciudad</option>
+                    <select class="form-select" name="ciudad" required">
+                        <option value="<?=$ref['ciudad']?>"><?=$ref['ciudad']?></option>
                         <?php foreach (daoRegistroUsuario::buscarCiudades() as $ciudad) :
                             ?>
-                            <option  required value="<?= $ciudad['nombre_departamento'] ?> - <?= $ciudad['nombre_ciudad'] ?>"><?= $ciudad['nombre_departamento'] ?>
+                            <option value="<?= $ciudad['nombre_departamento'] ?> - <?= $ciudad['nombre_ciudad'] ?>"><?= $ciudad['nombre_departamento'] ?>
                                 - <?= $ciudad['nombre_ciudad'] ?></option>
 
                         <?php endforeach;
@@ -124,7 +101,7 @@ include "../dao/daoRegistroUsuario.php";
 
                 <div class="col">
                     <label for="direccionCliente" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" name="direccionCliente" id="direccionCliente" required>
+                    <input type="text" class="form-control" name="direccionCliente" id="direccionCliente" value="<?=$ref['direccion']?>">
                     <br>
                 </div>
             </div>
@@ -132,40 +109,14 @@ include "../dao/daoRegistroUsuario.php";
             <div class="row">
                 <div class="col">
                     <label for="correoCliente" class="form-label">Correo</label>
-                    <input type="email" class="form-control" name="correoCliente" id="correoCliente" required>
+                    <input type="email" class="form-control" name="correoCliente" id="correoCliente" value="<?=$ref['correo']?>">
                     <br>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label for="clave" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="clave" id="clave" required>
-                </div>
-                <div class="col">
-                    <label for="confirmaClave" class="form-label">Confirme Contraseña</label>
-                    <input type="password" class="form-control" name="confirmaClave" id="confirmaClave"
-                           onchange="registrar()" required>
-                    <br>
-                </div>
-                <script>
-                    function registrar() {
-                        var password = document.getElementById("clave");
-                        var passwordConfirm = document.getElementById("confirmaClave");
-                        var btnRegitsrar = document.getElementById("btnRegistrar");
-                        if (password.value == passwordConfirm.value) {
-                            btnRegitsrar.disabled = false;
-                        } else {
-                            alert("Las constraseñas no coinciden");
-                            btnRegitsrar.disabled = true;
-                        }
-                    }
-
-                </script>
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <button type="submit" id="btnRegistrar" style="width: 200px;" class="btn btn-primary" disabled>
-                        REGISTRARME
+                    <button type="submit" id="btnRegistrar" style="width: 200px;" class="btn btn-primary" >
+                        ACTUALIZAR
                     </button>
 
                 </div>
