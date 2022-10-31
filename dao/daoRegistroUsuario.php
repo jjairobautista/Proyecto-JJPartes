@@ -41,7 +41,7 @@ class daoRegistroUsuario
         $connection = new claseConexion();
         $query = "INSERT INTO public.tbl_cliente(
 	cedula, nombres, apellidos, ciudad, direccion, correo, clave)
-	VALUES (" . $user->getCedula() . ", '" . $user->getNombre() . "','" . $user->getApellido() . "','" . $user->getCiudad() . "','" . $user->getDireccion() . "','" . $user->getCorreo() . "','" . $user->getPass() . "')";
+	VALUES (" . trim($user->getCedula()) . ", '" . trim($user->getNombre()) . "','" . trim($user->getApellido()) . "','" . trim($user->getCiudad()) . "','" . trim($user->getDireccion()) . "','" . trim($user->getCorreo()) . "','" . trim($user->getPass()) . "')";
         $connection->ejecutarActualizacion($query);
         echo $connection->ejecutarActualizacion($query);
         $connection->cerrarConexion();

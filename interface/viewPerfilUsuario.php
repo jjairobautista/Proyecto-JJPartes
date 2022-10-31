@@ -1,6 +1,10 @@
 <?php
 include '../dao/daoRegistroUsuario.php';
-$ref = daoRegistroUsuario::buscarCliente('1012456109')
+$id = $_GET['id'];
+$ref = daoRegistroUsuario::buscarCliente($id);
+$cedula = $ref['cedula'];
+
+//$ref = daoRegistroUsuario::buscarCliente(1012456109);
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,32 +49,9 @@ $ref = daoRegistroUsuario::buscarCliente('1012456109')
                         </li>
                     </ul>
 
-
-                    <div class="modal fade bg-primary" id="exampleModalToggle" aria-hidden="true"
-                         aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Inicio De Session</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <input class="form-control" type="email" name="" id="" required>
-                                    <br>
-                                    <input class="form-control" type="password" name="" id="" required>
-                                </div>
-                                <div class="modal-footer ">
-                                    <a href=""><img src="../img/iniciarSesion.png" width="60px" height="60px"
-                                                    alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a class="btn  m-2" data-bs-toggle="modal" href="#exampleModalToggle"
-                       role="button"><img src="../img/cerrar-sesion.png" class="img-thumbnail"
-                                          style="border-radius: 50%;" width="50px" height="50px" alt=""></a>
+                    <a class="btn  m-2" href="../control/controlador.php?a=cerrar">
+                        <img src="../img/cerrar-sesion.png" class="img-thumbnail" style="border-radius: 50%;" width="50px" height="50px" alt="">
+                    </a>
 
                 </div>
             </div>
@@ -89,18 +70,19 @@ $ref = daoRegistroUsuario::buscarCliente('1012456109')
                     <br>
                     <div class="card" style="width: 100%;">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><?=$ref['cedula']?></li>
-                            <li class="list-group-item"><?=$ref['nombres']?> <?=$ref['apellidos']?></li>
-                            <li class="list-group-item"><?=$ref['correo']?></li>
-                            <li class="list-group-item"><?=$ref['direccion']?></li>
+                            <li class="list-group-item"><?= $ref['cedula'] ?></li>
+                            <li class="list-group-item"><?= $ref['nombres'] ?> <?= $ref['apellidos'] ?></li>
+                            <li class="list-group-item"><?= $ref['correo'] ?></li>
+                            <li class="list-group-item"><?= $ref['direccion'] ?></li>
                         </ul>
                     </div>
                     <br>
                     <div class="col p-4 text-center">
-                        <a type="button" class="btn btn-info" href="viewEditarPerfilUser.php?id=1012456109" >Editar Información</a>
+                        <a type="button" class="btn btn-info" href="viewEditarPerfilUser.php?id=<?= $cedula?>">Editar
+                            Información</a>
                     </div>
                     <div class="col p-4 text-center">
-                        <a type="button" class="btn btn-warning" href="" >Cambio De Contraseña</a>
+                        <a type="button" class="btn btn-warning" href="">Cambio De Contraseña</a>
                     </div>
 
                 </div>
@@ -178,7 +160,8 @@ $ref = daoRegistroUsuario::buscarCliente('1012456109')
     <footer>
         <div class="row text-center bg-black" id="footerr">
 
-            <div class="col"><img src="../img/LOGOBLACK.jpg" width="400px" height="200px" class="rounded float-end" alt=""></div>
+            <div class="col"><img src="../img/LOGOBLACK.jpg" width="400px" height="200px" class="rounded float-end"
+                                  alt=""></div>
         </div>
     </footer>
 </div>

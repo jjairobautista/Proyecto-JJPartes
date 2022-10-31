@@ -8,13 +8,14 @@ require_once '../dao/daoRegistroUsuario.php';
 switch ($_GET['a']) {
     case 'registrar':
         $user = new modeloRegistroUsuario();
-        $user->setCedula($_POST['idCliente']);
-        $user->setNombre($_POST['nombreCliente']);
-        $user->setApellido($_POST['apellidoCliente']);
-        $user->setCiudad($_POST['ciudad']);
-        $user->setDireccion($_POST['direccionCliente']);
-        $user->setCorreo($_POST['correoCliente']);
-        $pass = md5($_POST['clave']);
+        $cedula = $_POST['idCliente'];
+        $user->setCedula(trim($_POST['idCliente']));
+        $user->setNombre(trim($_POST['nombreCliente']));
+        $user->setApellido(trim($_POST['apellidoCliente']));
+        $user->setCiudad(trim($_POST['ciudad']));
+        $user->setDireccion(trim($_POST['direccionCliente']));
+        $user->setCorreo(trim($_POST['correoCliente']));
+        $pass = md5(trim($_POST['clave']));
         $user->setPass($pass);
 
         $rs = daoRegistroUsuario::registrarUsuario($user);
@@ -22,21 +23,21 @@ switch ($_GET['a']) {
         if ($_GET['vista'] == 'si') {
             session_start();
 
-            header('Location: ../interface/viewPerfilUsuario.php');
+            header('Location: ../interface/viewPerfilUsuario.php?id='.$cedula);
         }
         break;
         case 'editar':
             $user = new modeloRegistroUsuario();
-            $user->setCedula($_POST['idCliente']);
-            $user->setNombre($_POST['nombreCliente']);
-            $user->setApellido($_POST['apellidoCliente']);
-            $user->setCiudad($_POST['ciudad']);
-            $user->setDireccion($_POST['direccionCliente']);
-            $user->setCorreo($_POST['correoCliente']);
+            $user->setCedula(trim($_POST['idCliente']));
+            $user->setNombre(trim($_POST['nombreCliente']));
+            $user->setApellido(trim($_POST['apellidoCliente']));
+            $user->setCiudad(trim($_POST['ciudad']));
+            $user->setDireccion(trim($_POST['direccionCliente']));
+            $user->setCorreo(trim($_POST['correoCliente']));
             $rs = daoRegistroUsuario::actualizarUsuario($user);
 
             if ($rs){
-                header('Location: ../interface/viewPerfilUsuario.php');
+                header("Location: ../interface/viewPerfilUsuario.php?id=".$_POST['idCliente']);
 
             }
             break;

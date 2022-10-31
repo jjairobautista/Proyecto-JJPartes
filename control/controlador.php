@@ -10,11 +10,17 @@ switch ($_GET['a']) {
         $user = $_POST['userLogin'];
         $pass = md5($_POST['passLogin']);
         $rs = daoRegistroUsuario::consultaLogin($user);
-        echo "<br>" . $rs['clave'];
+        $passBD = (trim($rs['clave']));
+
+        echo "<br>" . trim($passBD);
         echo '<br>' . $pass;
-        if (strcmp($rs['clave'], $pass)===0) {
+        echo '<br>' . strlen(trim($passBD));
+        echo '<br>' . strlen($pass);
+
+
+        if (strcmp($passBD, $pass) == 0) {
             session_start();
-            header('Location: ../interface/viewPerfilUsuario.php');
+            header("Location: ../interface/viewPerfilUsuario.php?id=".$_POST['userLogin']);
 
         } else {
             echo '<br> no se puede iniciarSesion';
