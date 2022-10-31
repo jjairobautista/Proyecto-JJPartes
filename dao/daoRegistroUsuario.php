@@ -38,4 +38,15 @@ class daoRegistroUsuario
         $connection->cerrarConexion();
 
     }
+
+    public static function consultaLogin($user)
+    {
+        $connection = new claseConexion();
+        $query = "SELECT clave FROM tbl_cliente WHERE cedula =" . $user;
+        $rs = $connection->ejecutarConsulta($query);
+        $connection->cerrarConexion();
+        return $rs[0];
+
+
+    }
 }

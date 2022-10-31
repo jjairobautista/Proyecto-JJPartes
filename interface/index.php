@@ -36,21 +36,29 @@
                         </ul>
                         
 
-                            <div class="modal fade bg-primary" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal fade " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
+                                    <div class="modal-content p-3">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Inicio De Session</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            <input class="form-control" type="email" name="" id="">
-                                            <br>
-                                            <input class="form-control" type="password" name="" id="">
-                                        </div>
-                                        <div class="modal-footer ">
-                                            <a href=""><img src="../img/iniciarSesion.png" width="60px" height="60px" alt=""></a>
-                                        </div>
+                                        <form action="../control/controlador.php?a=login&vista=si" method="post">
+                                            <div class="form-group" >
+                                                <br>
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="number" class="form-control" name="userLogin" id="exampleInputEmail1"
+                                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                                <br>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Password</label>
+                                                <input type="password" class="form-control" name="passLogin" id="exampleInputPassword1"
+                                                       placeholder="Password">
+                                            </div>   <br>
+
+                                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

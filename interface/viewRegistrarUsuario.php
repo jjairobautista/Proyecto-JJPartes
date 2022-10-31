@@ -38,20 +38,7 @@ include "../dao/daoRegistroUsuario.php";
                         <li class="nav-item">
                             <a class="nav-link active" style="border-right: 1px solid #bbb;" href="#">Navega</a>
                         </li>
-                        <li class="nav-item dropdown" style="border-right: 1px solid #bbb;">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link disabled">Disabled</a>
                         </li>
@@ -114,8 +101,8 @@ include "../dao/daoRegistroUsuario.php";
             <div class="row">
                 <div class="col">
                     <label for="ciudad" class="form-label">Ciudad</label>
-                    <select class="form-select"  name="ciudad" required>
-                        <option selected disabled >Seleccione la Ciudad</option>
+                    <select class="form-select" name="ciudad" required>
+                        <option selected disabled>Seleccione la Ciudad</option>
                         <?php foreach (daoRegistroUsuario::buscarCiudades() as $ciudad) :
                             ?>
                             <option value="<?= $ciudad['nombre_departamento'] ?> - <?= $ciudad['nombre_ciudad'] ?>"><?= $ciudad['nombre_departamento'] ?>
@@ -145,7 +132,7 @@ include "../dao/daoRegistroUsuario.php";
             <div class="row">
                 <div class="col">
                     <label for="correoCliente" class="form-label">Correo</label>
-                    <input type="text" class="form-control" name="correoCliente" id="correoCliente" required>
+                    <input type="email" class="form-control" name="correoCliente" id="correoCliente" required>
                     <br>
                 </div>
             </div>
@@ -156,7 +143,8 @@ include "../dao/daoRegistroUsuario.php";
                 </div>
                 <div class="col">
                     <label for="confirmaClave" class="form-label">Confirme Contraseña</label>
-                    <input type="password" class="form-control" name="confirmaClave" id="confirmaClave" onchange="registrar()" required>
+                    <input type="password" class="form-control" name="confirmaClave" id="confirmaClave"
+                           onchange="registrar()" required>
                     <br>
                 </div>
                 <script>
@@ -176,7 +164,7 @@ include "../dao/daoRegistroUsuario.php";
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <button type="submit" id="btnRegistrar" style="width: 200px;" class="btn btn-primary" disabled >
+                    <button type="submit" id="btnRegistrar" style="width: 200px;" class="btn btn-primary" disabled>
                         REGISTRARME
                     </button>
 
