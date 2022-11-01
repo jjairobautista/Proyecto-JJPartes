@@ -20,10 +20,13 @@ switch ($_GET['a']) {
 
         if (strcmp($passBD, $pass) == 0) {
             session_start();
+            $_SESSION['userLogin'] = $user;
+            $_SESSION['tiempoIngreso'] = time();
+            $_SESSION['notificacion'] = 'NO';
             header("Location: ../interface/viewPerfilUsuario.php?id=".$_POST['userLogin']);
 
         } else {
-            echo '<br> no se puede iniciarSesion';
+            header("Location: ../interface/index.php?dato=error");
         }
         break;
     case 'cerrar':

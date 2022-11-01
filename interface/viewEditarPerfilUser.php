@@ -34,7 +34,7 @@ $ref = daoRegistroUsuario::buscarCliente($_GET['id']);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" style="border-right: 1px solid #bbb;">
-                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.php?dato=bien">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" style="border-right: 1px solid #bbb;" href="#">Navega</a>

@@ -1,3 +1,13 @@
+<?php
+if ($_GET['dato']=='error') {
+    echo "<div class='col-md-12'>";
+    echo "<div class='alert alert-danger'>";
+    echo "<button class='close' data-dismiss='alert'><span>&times;</span></button>";
+    echo "<center><strong>Error!</strong> Datos erroneos.</center>";
+    echo "</div>";
+    echo "</div>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +35,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item" style="border-right: 1px solid #bbb;">
-                                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                                <a class="nav-link active" aria-current="page" href="index.php?dato=bien">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" style="border-right: 1px solid #bbb;" href="Navega.php">Navega</a>
