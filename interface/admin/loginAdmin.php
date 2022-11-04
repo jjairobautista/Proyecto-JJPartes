@@ -25,30 +25,47 @@
     <hr>
     <div class="row">
         <div class="col-md-5">
-            <img src="../../img/NOSOTROS.jpg" width="100%" height="390px" alt="">
+            <img src="../../img/Admin.png" width="100%" height="390px" alt="">
 
         </div>
         <div class="col-md-7">
             <br><br><br>
-            <form action="../control/controlador.php?a=login&vista=si" method="post">
-                <div class="form-group" >
+            <form action="../admin/indexAdmin.php?rs=nada" method="post">
+                <div class="form-group">
                     <br>
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="number"  class="form-control" name="userLogin" id="exampleInputEmail1"
+                    <input type="text" class="form-control" name="userLogin" id="userLogin"
                            aria-describedby="emailHelp" placeholder="Enter email">
                     <br>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="passLogin" id="exampleInputPassword1"
+                    <input type="password" onchange="loginAdmin()" class="form-control" name="passLogin" id="passLogin"
                            placeholder="Password">
-                </div>   <br>
+                </div>
+                <br>
 
-                <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                <button type="submit" id="btnInicioSesion"  class="btn btn-primary" disabled>Iniciar Sesion</button>
             </form>
         </div>
+        <script>
+            function loginAdmin() {
+                var user = document.getElementById("userLogin");
+                var pass = document.getElementById("passLogin");
+                var btnInicioSesion = document.getElementById("btnInicioSesion")
+                if (user.value == "admin" && pass.value == "admin") {
+
+                    btnInicioSesion.disabled = false;
+                } else {
+                    alert("Credenciales incorrectas, por favor intente de nuevo")
+                    btnInicioSesion.disabled = true;
+
+                }
+            }
+        </script>
     </div>
     <br>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

@@ -1,5 +1,4 @@
 <?php
-require_once '../modelo/modeloRegistroUsuario.php';
 require_once '../modelo/ClaseConexionBD.php';
 
 class daoRegistroUsuario

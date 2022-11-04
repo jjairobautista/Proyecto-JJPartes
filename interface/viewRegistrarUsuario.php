@@ -1,5 +1,5 @@
 <?php
-include "../dao/daoRegistroUsuario.php";
+include_once "../dao/daoRegistroUsuario.php";
 
 ?>
 <!DOCTYPE html>
@@ -32,44 +32,11 @@ include "../dao/daoRegistroUsuario.php";
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item" style="border-right: 1px solid #bbb;">
-                            <a class="nav-link" aria-current="page" href="index.php?dato=bien">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" style="border-right: 1px solid #bbb;" href="#">Navega</a>
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-
-
-                    <div class="modal fade bg-primary" id="exampleModalToggle" aria-hidden="true"
-                         aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Inicio De Session</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <input class="form-control" type="email" name="" id="" required>
-                                    <br>
-                                    <input class="form-control" type="password" name="" id="" required>
-                                </div>
-                                <div class="modal-footer ">
-                                    <a href=""><img src="../img/iniciarSesion.png" width="60px" height="60px"
-                                                    alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-success m-2" data-bs-toggle="modal" href="#exampleModalToggle"
-                       role="button">LOGIN</a>
-
                 </div>
             </div>
         </nav>
@@ -172,6 +139,7 @@ include "../dao/daoRegistroUsuario.php";
             </div>
         </form>
         <hr>
+        <a href="loginUsuario.php?dato=nada" class="btn btn-success"> Volver</a>
     </div>
     <br>
 

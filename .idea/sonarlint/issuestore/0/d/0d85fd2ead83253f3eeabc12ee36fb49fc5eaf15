@@ -1,0 +1,8 @@
+
+_php:S103
+"KSplit this 121 characters long line (which is greater than 120 authorized).(•Ì•’
+dphp:S103+"KSplit this 258 characters long line (which is greater than 120 authorized).(ê¤Úúÿÿÿÿ
+_php:S1036"KSplit this 221 characters long line (which is greater than 120 authorized).(¢ì¨õ
+jphp:S101"VRename class "daoRegistroUsuario" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(ö››ÿ
+u	php:S1488"[Immediately return this expression instead of assigning it to the temporary variable "$rs".(¾Ä®¾úÿÿÿÿ
+r	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(Ëœáûÿÿÿÿ8§àÙÃ0

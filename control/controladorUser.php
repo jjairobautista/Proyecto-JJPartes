@@ -26,12 +26,27 @@ switch ($_GET['a']) {
             header("Location: ../interface/viewPerfilUsuario.php?id=".$_POST['userLogin']);
 
         } else {
-            header("Location: ../interface/index.php?dato=error");
+            header("Location: ../interface/loginUsuario.php?dato=error");
         }
         break;
     case 'cerrar':
         session_start();
         session_destroy();
-        header("Location: ../interface/index.php");
+        header("Location: ../interface/loginUsuario.php?dato=cerrar");
+        break;
+
+    case 'correo':
+
+        $destino = 'jjairobautista@ucompensar.edu.co';
+        $nombre = $_POST['nombre'];
+        $correo = $_POST['correo'];
+        $telefono = $_POST['telefono'];
+        $descripcion = $_POST['descripcion'];
+
+        $contenido = "Nombre: " . $nombre . "\n Correo: " . $correo . "\n Telefono: " . $telefono .
+            "\n Descripcion: " . $descripcion ;
+
+        mail($destino, "Consulta De ".$nombre, $contenido );
+        header("Location: ../interface/index.php?id=".$_POST['cedula']);
         break;
 }

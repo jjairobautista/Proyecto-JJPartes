@@ -2,7 +2,8 @@
 include '../dao/daoRegistroUsuario.php';
 $id = $_GET['id'];
 $ref = daoRegistroUsuario::buscarCliente($id);
-$cedula = $ref['cedula'];
+
+
 
 //$ref = daoRegistroUsuario::buscarCliente(1012456109);
 ?>
@@ -38,10 +39,10 @@ $cedula = $ref['cedula'];
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" style="border-right: 1px solid #bbb;">
-                            <a class="nav-link" aria-current="page" href="index.php?dato=bien">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.php?id=<?= $ref['cedula'] ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" style="border-right: 1px solid #bbb;" href="#">Navega</a>
+                            <a class="nav-link" style="border-right: 1px solid #bbb;" href="Navega.php?id=<?= $ref['cedula'] ?>">Navega</a>
                         </li>
 
                         <li class="nav-item">
@@ -49,8 +50,8 @@ $cedula = $ref['cedula'];
                         </li>
                     </ul>
 
-                    <a class="btn  m-2" href="../control/controlador.php?a=cerrar">
-                        <img src="../img/cerrar-sesion.png" class="img-thumbnail" style="border-radius: 50%;" width="50px" height="50px" alt="">
+                    <a class="btn  m-2" href="../control/controladorUser.php?a=cerrar">
+                        <img src="../img/salida.png" class="img-thumbnail" style="border-radius: 50%;" width="50px" height="50px" alt="">
                     </a>
 
                 </div>
@@ -60,7 +61,7 @@ $cedula = $ref['cedula'];
     <hr>
     <div class="container ">
         <div class="row">
-            <div class="col-md-4" style="border-right: 1px solid #bbb;">
+            <div class="col-md-4" style="border-right: 1px solid #bbb; ">
                 <div class="col">
                     <div class="text-center">
                         <img src="../img/perfilUser.jpg" style="border-radius: 50%; width: 400px; height: 400px;"
@@ -78,7 +79,7 @@ $cedula = $ref['cedula'];
                     </div>
                     <br>
                     <div class="col p-4 text-center">
-                        <a type="button" class="btn btn-info" href="viewEditarPerfilUser.php?id=<?= $cedula?>">Editar
+                        <a type="button" class="btn btn-info" href="viewEditarPerfilUser.php?id=<?= $ref['cedula'] ?>">Editar
                             Información</a>
                     </div>
                     <div class="col p-4 text-center">

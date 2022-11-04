@@ -1,3 +1,6 @@
+<?php
+$id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/stilos.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3085/3085411.png">
 
-    <title>Document</title>
+    <title>Navega</title>
 </head>
 
 <body>
@@ -25,7 +29,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item" style="border-right: 1px solid #bbb;">
-                                <a class="nav-link" aria-current="page" href="index.php?dato=bien">Home</a>
+                                <a class="nav-link" aria-current="page" href="index.php?id=<?= $id ?>">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" style="border-right: 1px solid #bbb;" href="#">Navega</a>
@@ -35,39 +39,9 @@
                                 <a class="nav-link disabled">Disabled</a>
                             </li>
                         </ul>
-
-
-
-                        <div class="modal fade " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content p-3">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Inicio De Session</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <form action="../control/controlador.php?a=login&vista=si" method="post">
-                                        <div class="form-group" >
-                                            <br>
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="number" class="form-control" name="userLogin" id="exampleInputEmail1"
-                                                   aria-describedby="emailHelp" placeholder="Enter email">
-                                            <br>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" name="passLogin" id="exampleInputPassword1"
-                                                   placeholder="Password">
-                                        </div>   <br>
-
-                                        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="btn btn-success m-2" data-bs-toggle="modal" href="#exampleModalToggle" role="button">LOGIN</a>
-                        <a href="viewRegistrarUsuario.php" class="btn btn-primary m-2">REGISTRARME</a>
-
+                        <a class="btn  m-2" href="viewPerfilUsuario.php?id=<?= $id ?>">
+                            <img src="../img/perfilUser.jpg" class="img-thumbnail" style="border-radius: 50%;" width="50px" height="50px" alt="">
+                        </a>
                     </div>
                 </div>
             </nav>

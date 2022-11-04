@@ -23,7 +23,7 @@ switch ($_GET['a']) {
         if ($_GET['vista'] == 'si') {
             session_start();
 
-            header('Location: ../interface/viewPerfilUsuario.php?id='.$cedula);
+            header('Location: ../interface/index.php?dato=iniceSesion');
         }
         break;
         case 'editar':

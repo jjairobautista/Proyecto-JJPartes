@@ -1,0 +1,6 @@
+
+d	php:S1808'"JPut one space between the closing parenthesis and the opening curly brace.(ğÿµûúÿÿÿÿ
+g	php:S1301"MReplace this "switch" statement with "if" statements to increase readability.(ñ¼Óüÿÿÿÿ
+e	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(ÃØêW
+e	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(ğ¸™<
+Pphp:S131"7Add a "case default" clause to this "switch" statement.(ñ¼Óüÿÿÿÿ

@@ -1,3 +1,15 @@
+<?php
+if ($_GET['rs'] == 'exitoso') {
+    echo "<div class='col-md-12'>";
+    echo "<div class='alert alert-success'>";
+    echo "<button class='close' data-dismiss='alert'><span>&times;</span></button>";
+    echo "<center><strong>Exitoso! </strong> Datos Ingresados Correctamente.</center>";
+    echo "</div>";
+    echo "</div>";
+
+}
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +24,7 @@
 
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2082/2082841.png">
 
-    <title>Registro Articulo</title>
+    <title>Inicio Admin</title>
 </head>
 <body>
 
@@ -25,7 +37,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-2" style="border-right: 1px solid #bbb;height: 100%">
+            <div class="col-md-2" style="border-right: 1px solid #bbb;height: 500px" >
                 <div class="col">
                     <a href="indexAdmin.php?rs=nada" class="btn btn-danger" style="width: 100% ;margin: 5px">Inicio</a>
                 </div>
@@ -34,7 +46,7 @@
 
                 </div>
                 <div class="col">
-                    <a href="viewConsultarProvedor.php" class="btn btn-danger" style="width: 100% ;margin: 5px">Consultar
+                    <a href="viewConsultarProvedor.php?rs=nada" class="btn btn-danger" style="width: 100% ;margin: 5px">Consultar
                         Provedor</a>
                 </div>
                 <div class="col">
@@ -42,8 +54,27 @@
 
                 </div>
                 <div class="col">
+                    <a href="viewRegistroItem.php" class="btn btn-danger" style="width: 100% ;margin: 5px">Registrar Descuento</a>
 
                 </div>
+                <div class="col">
+                    <a href="viewRegistroItem.php" class="btn btn-danger" style="width: 100% ;margin: 5px">Registrar Foto Articulo</a>
+
+                </div>
+                <div class="col">
+                    <a href="viewRegistroItem.php" class="btn btn-danger" style="width: 100% ;margin: 5px">Registrar Categoria</a>
+
+                </div>
+                <div class="col">
+                    <a href="viewRegistroItem.php" class="btn btn-danger" style="width: 100% ;margin: 5px">Registrar Modelo</a>
+
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+            <div class="col-md-10">
+
             </div>
         </div>
     </div>
