@@ -44,7 +44,9 @@ if ($_GET['dato'] == 'error') {
     <hr>
     <div class="row">
         <div class="col-md-5">
-            <img src="../img/LOGOBLACK.jpg" width="100%" height="390px" alt="">
+           <a href="index2.php">
+               <img src="../img/LOGOBLACK.jpg" width="100%" height="390px" alt="">
+           </a>
 
         </div>
         <div class="col-md-7">

@@ -47,6 +47,6 @@ switch ($_GET['a']) {
             "\n Descripcion: " . $descripcion ;
 
         mail($destino, "Consulta De ".$nombre, $contenido );
-        header("Location: ../interface/index.php?id=".$_POST['cedula']);
+        header("Location: ../interface/index2.php?id=".$_POST['cedula']);
         break;
 }

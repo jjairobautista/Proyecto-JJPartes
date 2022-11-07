@@ -23,7 +23,7 @@ switch ($_GET['a']) {
         if ($_GET['vista'] == 'si') {
             session_start();
 
-            header('Location: ../interface/index.php?dato=iniceSesion');
+            header('Location: ../interface/index2.php?dato=iniceSesion');
         }
         break;
         case 'editar':
